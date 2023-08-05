@@ -1,0 +1,142 @@
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --hover-state: hsl(159, 37%, 22%);
+  --cream: hsl(30, 38%, 92%);
+  --dark-blue: hsl(212, 21%, 14%);
+  --greyish-blue: hsl(228, 12%, 48%);
+  --productDetails-bg: hsl(0, 0%, 100%);
+  --font-size: 14px;
+  --title-font: "Fraunces", sans-serif;
+  --main-font: "Montserrat", sans-serif;
+  --border-radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-size: var(--font-size);
+  font-family: var(--main-font);
+  background-color: var(--cream);
+  height: 100vh;  /* Set minimum height to full viewport height */
+  display: flex;  /* Set flex layout */
+  flex-direction: row;  /* Set flex direction to row */
+  justify-content: center;  /* Center content horizontally */
+  align-items: center;  /* Center content vertically */
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.productImageContainer {
+  width: 300px;
+  height: 500px;
+
+}
+
+.desktopImage {
+  width: 300px;
+  height: 500px;
+}
+
+.mobileImage {
+  display: none;
+}
+
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 25px 30px 30px;
+  background-color: var(--productDetails-bg);
+  justify-content: space-between;
+  width: 300px;
+  height: 500px;
+
+}
+
+.title {
+  margin-bottom: 10px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  color: var(--greyish-blue);
+}
+
+.productName {
+  margin-bottom: 10px;
+  color: var(--dark-blue);
+  font-size: 40px;
+  font-family: var(--title-font);
+  line-height: 1;
+}
+
+p {
+  margin-bottom: 10px;
+  color: var(--greyish-blue);
+  font-weight: bold;
+  line-height: 26px;
+}
+
+.priceContainer {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.discountPrice {
+  font-family: var(--title-font);
+  color: var(--dark-cyan);
+  font-size: 35px;
+}
+
+.originalPrice {
+  margin-left: 25px;
+  text-decoration: line-through;
+}
+
+button {
+    background-color: rgb(61, 129, 104);
+    text-align: center;
+    border-radius: 10px;
+    padding: 15px 10px;
+    color:  hsl(0, 0%, 100%);
+    margin-right: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+
+}
+
+@media (max-width: 575px) {
+
+  main {
+       flex-direction: column;
+       width: 100%;
+       /* height: auto; */
+  }
+
+  .productImageContainer, .productDetails {
+       width: 100%;
+       height: auto;
+  }
+
+  .desktopImage {
+       display: none;
+  }
+
+  .mobileImage {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .priceContainer {
+    flex-flow: wrap;
+  }
+}
